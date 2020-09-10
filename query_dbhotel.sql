@@ -31,7 +31,8 @@ FROM pagamenti;
 --     • Seleziona gli ospiti riconosciuti con patente e nati nel 1975
 SELECT *
 FROM ospiti
-WHERE document_type LIKE 'Driver%' AND YEAR(date_of_birth) = 1975;
+WHERE document_type LIKE 'Driver%'
+  AND YEAR(date_of_birth) = 1975;
 
 --     • Quanti posti letto ha l'hotel in totale?
 SELECT SUM(beds) AS posti_letto_totali
