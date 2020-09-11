@@ -20,7 +20,7 @@ FROM ospiti
 WHERE name LIKE 'd%';
 
 --     • Calcola il totale degli ordini accepted
-SELECT status, count(status)
+SELECT SUM(price) AS 'sum_price'
 FROM pagamenti
 WHERE status LIKE 'accepted';
 
