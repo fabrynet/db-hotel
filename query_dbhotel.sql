@@ -104,10 +104,10 @@ FROM pagamenti AS T1
 WHERE T1.prenotazione_id = 7;
 
 --     • Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
-SELECT T2.id, T2.room_number, T2.floor, T2.beds
-FROM prenotazioni AS T1
-RIGHT JOIN stanze AS T2
-	ON T1.stanza_id = T2.id
-WHERE T1.stanza_id IS NULL;
+SELECT T1.id, T1.room_number, T1.floor, T1.beds
+FROM stanze AS T1
+LEFT JOIN prenotazioni AS T2
+	ON T1.id = T2.stanza_id
+WHERE T2.stanza_id IS NULL;
 
 -- NOTE: e' sufficiente caricare un file di testo
